@@ -1,35 +1,48 @@
-<?php 
-ini_set('display_errors', 1);
+<?php
+     
+     class tom {
+      public $name,$age;
+      public function __construct($name,$age){
+      $this->name=$name;
+      $this->age=$age;
+      }
+      public function info(){
+          echo 'amar name:'.$this->name."\n".'amar boyos:'.$this->age;
+                            }   
+            }
+    
+//new class teacher
+            class teacher extends tom{
+                private $subjet;
+                public function __construct($name,$age,$subjet){
+                parent::__construct($name,$age);
+                $this->subjet=$subjet;
+                }
+                public function in(){
+                    parent::info();
+                    echo '  ami akjon teacher, ami ' .$this->subjet.' poray';
+                }
+                                        }
+    //new class student 
+            class student extends tom{
+                private $roll;
+                public function __construct($name,$age, $roll){
+                    parent::__construct($name,$age);
+                    $this->roll=$roll;
+                      }
+                public function info(){
+                    parent::info();
+                    echo '  amar roll'.$this->roll;
+                }
+                
+            }
+            
+ $student = new Student("করিম", 15, 101);
+$teacher = new Teacher("রহিম স্যার", 40, "গণিত");
 
-class sum {
-    public $predefineVal;
-    public function __construct($abc)
-    {
-        $this->predefineVal = $abc;   
-    }
-
-    public function bb($val){
-       
-       return $this->predefineVal+$val;
-    }
-}
-
-class rahad {
-    public function queryResult ($b){
-          return new sum($b); 
-    }
-}
-
-$n = new sum(45);
-
-
-$firstClass = new rahad();
-
-
-
-echo $firstClass->queryResult(30); 
-
-
+$student->info();
+echo "\n";
+$teacher->in();
 
 
 ?>
