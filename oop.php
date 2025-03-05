@@ -44,5 +44,7 @@ $student->info();
 echo "\n";
 $teacher->in();
 
+echo "RAHAD";
+
 
 ?>
